@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Großer Custom Mauszeiger</title>
+  <style>
+    * {
+        cursor: url(cross_l.cur) 100 100, auto !important;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    }
+
+    #custom-cursor {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      background: url('cur.gif') no-repeat center;
+      background-size: 1000px 1000px;
+      pointer-events: none; /* Verhindert, dass das Bild mit der Maus interagiert */
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div id="custom-cursor"></div>
+
+  <script>
+    const customCursor = document.getElementById('custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      customCursor.style.left = `${e.pageX - 500}px`; // Die Hälfte der Größe abziehen, um den Mauszeiger korrekt zu positionieren
+      customCursor.style.top = `${e.pageY - 500}px`;
+    });
+  </script>
+</body>
+</html>
