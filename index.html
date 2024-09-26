@@ -1,42 +1,91 @@
-<!DOCTYPE html><link rel="preload" as="image" href="https://kasai.rip/favicon.png">
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kasai.rip</title>
     <link rel="stylesheet" href="style.css" />
 
-  </head>
-  <body>
+</head>
+<body>
+    <canvas id="star-canvas"></canvas> <!-- Canvas für Sterne -->
+    
     <div class="content">
-      <h1 class="title">
-        kasai.rip
-        <div class="aurora">
-          <div class="aurora__item"></div>
-          <div class="aurora__item"></div>
-          <div class="aurora__item"></div>
-          <div class="aurora__item"></div>
-        </div>
-      </h1>
-      <p class="subtitle">More Coming Soon</p>
-      
-      <!--<button class="button" data-url="h"></button><br><br>-->
-      <p class="subtitle">© 2024 Kasai.RIP</p>
-      <a href="impressum.htm">Impressum</a>
-      <a href="PrivacyPolicy.htm">Datenschutzerklärung</a>
-      <script>
-document.querySelectorAll('.button').forEach(function(button) {
-  button.addEventListener('click', function() {
-    const url = this.getAttribute('data-url');
-    setTimeout(function() {
-      window.location.href = url;
-    }, 5);
-  });
-});
+        <h1 class="title">
+            kasai.rip
+            <div class="aurora">
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+                <div class="aurora__item"></div>
+            </div>
+        </h1>
 
-      </script>
-      
-      
+        <!-- Info-Box über allem -->
+
+
+        <!-- Weitere Inhalte zum Scrollen -->
+         <br>
+        <div class="content" class="additional-content">
+          <!--<button class="button" data-url="https://games.kasai.rip/">GAMES</button><br>
+          <button class="button" data-url="https://test.kasai.rip/kasai-games">BETA ONLINE GAMES</button><br>
+          <button class="button" data-url="https://games.kasai.rip/">URL Shortener</button><br>-->
+            
+        </div>
+        
+        <div align="left" class="info-box">
+          <p>Readme.MD</p>
+          <h2 align="left">Hi 👋! My name is Luca !</h2>
+
+           
+          
+          <p align="left">👀 I’m interested in Old Computers, Programming, Servers and the Web</p>
+          
+           
+          
+          <div align="left">
+            <a href="mailto:luca@kasai.rip" target="_blank">
+              <img src="https://img.shields.io/static/v1?message=Mail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+            </a>
+            <img src="https://img.shields.io/static/v1?message=@iam.shad0w502&logo=discord&label=Discord&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
+          </div>
+          
+          
+          <img align="right" height="150" src="https://kasai-interactive.github.io/junko.jpg"/>
+          <br>          <br>
+          
+           
+          
+          <div align="left">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
+            <img width="12" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo"  />
+            <img width="12" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="windows8 logo"  />
+            <img width="12" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="40" alt="android logo"  />
+          </div>
+          
+           
+          
+          <p align="left">he/him</p>
+          
+           
+      </div>
+        <p class="subtitle">© 2024 Kasai.RIP</p>
+        <a href="Impressum.htm">Impressum</a>
+        <a href="PrivacyPolicy.htm">Datenschutzerklärung</a>
     </div>
-  </body>
+    <script>
+      document.querySelectorAll('.button').forEach(function(button) {
+        button.addEventListener('click', function() {
+          const url = this.getAttribute('data-url');
+          setTimeout(function() {
+            window.location.href = url;
+          }, 5);
+        });
+      });
+      </script>
+    <script src="script.js"></script> <!-- Externe JS-Datei für Animation -->
+</body>
 </html>
