@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Goile Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">   
+    <style>
+        body {
+            background-image: url(bg.jpg);
+            font-family: 'Playwrite DE Grund', sans-serif;
+        }
+
+
+        .ente {
+            position: absolute;
+            left: -100px; /* Startposition außerhalb des Bildschirms */
+            animation: fly-in 3s forwards;
+        }
+
+        @keyframes fly-in {
+            0% {
+                left: -100px;
+            }
+            100% {
+                left: 50%; /* Endposition in der Mitte */
+                transform: translateX(-50%);
+            }
+        }
+
+        .background-ente {
+            position: absolute;
+            top: 20%; /* Höhe, bei der die Ente fliegen soll */
+            animation: fly-background 5s linear infinite;
+        }
+
+        @keyframes fly-background {
+            0% {
+                left: -150px; /* Startposition außerhalb des Bildschirms */
+            }
+            100% {
+                left: 100%; /* Endposition außerhalb des Bildschirms */
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 style="color: white;">Der Weltraum</h1></center>
+
+    <br><br><br><br><br><br><br><br>    <br><br><br><br><br><br>
+
+    <center><h1 style="color: white;">Unendliche Weiten...</h1></center>
+    <br><br><br>
+    <br><br><br><br><br><br>
+
+    <center><h1 style="color: white;">Dies sind die Abenteuer der USS-Ente!</h1></center>
+    <center><h1 style="color: white;">Ma-ma-meinen Sie Enterprise ???</h1></center>
+    <br><br><br><br><br><br>
+    <center><h1 style="color: white;">Nein Ente, es ist eine gigantische Raumente.</h1></center>
+    <center><img style="color: white; width: 500px;" src="ente_front.jpg" alt="USS"></center>
+    <hr>
+    <center><h1 style="color: white;">Baupläne zur USS-Ente:</h1></center>
+    <center><img style="color: white; width: 500px;" src="bauplan.jpg" alt="USS"></center>
+
+<hr>
+<a href="https://www.facebook.com/starstarspace/?locale=de_DE">Star Star Space Facebook</a>
+<a href=""></a>
+<a href=""></a>
+    <!-- Hintergrund Ente -->
+    <div class="background-ente">
+        <img style="color: white; width: 200px;" src="ente.webp" alt="Hintergrund Ente">
+    </div>
+</body>
+</html>
