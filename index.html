@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kasai.rip</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css" />
-
+    <link id="theme-stylesheet" rel="stylesheet" href="style.css" />
 </head>
 <body>
     <canvas id="star-canvas"></canvas>
@@ -21,117 +20,127 @@
                 <div class="aurora__item"></div>
             </div>
         </h1>
+</div>
 
-
-         <br>
+<div align="left" class="mode-box"><a id="theme-toggle" style="cursor: pointer;">Toggle Dark/Light Mode</a><br></div>
+       <!-- <button class="button" data-url="https://games.kasai.rip/">GAMES</button>-->
+        
+        <br>
         <div class="content" class="additional-content">
-          <!--<button class="button" data-url="https://games.kasai.rip/">GAMES</button><br>
-          <button class="button" data-url="https://test.kasai.rip/kasai-games">BETA ONLINE GAMES</button><br>
-          <button class="button" data-url="https://games.kasai.rip/">URL Shortener</button><br>-->
-            
+          <!-- Additional content here -->
         </div>
         
         <div align="left" class="info-box">
           <p>Readme.MD</p>
           <h2 align="left">Hi 👋! My name is Luca !</h2>
-
-           
-          
           <p align="left">👀 I’m interested in Old Computers, Programming, Servers and the Web</p>
-          
-           
           
           <div align="left">
             <a href="mailto:luca@kasai.rip" target="_blank">
-              <img src="https://img.shields.io/static/v1?message=Mail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+              <img src="https://img.shields.io/static/v1?message=Mail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo" />
             </a>
-            <img src="https://img.shields.io/static/v1?message=@iam.shad0w502&logo=discord&label=Discord&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
+            <img src="https://img.shields.io/static/v1?message=@iam.shad0w502&logo=discord&label=Discord&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo" />
           </div>
-          
           
           <img align="right" height="150" src="https://kasai-interactive.github.io/junko.jpg"/>
-          <br>          <br>
-          
-           
+          <br><br>
           
           <div align="left">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo" />
             <img width="12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo"  />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo" />
             <img width="12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="windows8 logo"  />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="windows8 logo" />
             <img width="12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="40" alt="android logo"  />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" height="40" alt="android logo" />
           </div>
-          
-           
           
           <p align="left">he/him</p>
           
-           
       </div>
+
         <p class="subtitle">© 2024 Kasai.RIP</p>
-        <a href="impressum.htm">Impressum</a>
-        <a href="PrivacyPolicy.htm">Datenschutzerklärung</a>
+        <a class="mode-box" href="impressum.htm">Impressum</a>
+        <a class="mode-box" href="PrivacyPolicy.htm">Datenschutzerklärung</a>
     </div>
+
     <script>
-      document.querySelectorAll('.button').forEach(function(button) {
-        button.addEventListener('click', function() {
-          const url = this.getAttribute('data-url');
-          setTimeout(function() {
-            window.location.href = url;
-          }, 5);
-        });
+      // Theme toggle script
+      const themeToggleButton = document.getElementById('theme-toggle');
+      const themeStylesheet = document.getElementById('theme-stylesheet');
+
+      // Default to dark mode
+      let isDarkMode = true; // Initially set to true for dark mode
+
+      themeToggleButton.addEventListener('click', () => {
+        if (isDarkMode) {
+          themeStylesheet.setAttribute('href', 'style_White.css'); // Switch to light mode
+        } else {
+          themeStylesheet.setAttribute('href', 'style.css'); // Switch to dark mode
+        }
+        isDarkMode = !isDarkMode; // Toggle the mode
       });
-      </script>
-    <script>const canvas = document.getElementById('star-canvas');
-const ctx = canvas.getContext('2d');
 
-let stars = [];
-const starCount = 190;
+      // Star canvas code
+      const canvas = document.getElementById('star-canvas');
+      const ctx = canvas.getContext('2d');
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
+      let stars = [];
+      const starCount = 190;
 
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
 
-function createStars() {
-  stars = [];
-  for (let i = 0; i < starCount; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 2 + 1, // heightwithd
-      speed: Math.random() * 2 + 0.2, // speed
-      opacity: Math.random() * 0.3 + 0.4, // transparent
-    });
-  }
-}
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
 
-function animateStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  stars.forEach(star => {
-    star.y += star.speed;
+      function createStars() {
+        stars = [];
+        for (let i = 0; i < starCount; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 2 + 1,
+            speed: Math.random() * 2 + 0.2,
+            opacity: Math.random() * 0.3 + 0.4,
+          });
+        }
+      }
 
-    if (star.y > canvas.height) {
-      star.y = -star.radius;
-      star.x = Math.random() * canvas.width;
-    }
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach(star => {
+          star.y += star.speed;
 
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 0, 0, ${star.opacity})`; 
-    ctx.fill();
-    ctx.closePath();
-  });
+          if (star.y > canvas.height) {
+            star.y = -star.radius;
+            star.x = Math.random() * canvas.width;
+          }
 
-  requestAnimationFrame(animateStars);
-}
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 0, 0, ${star.opacity})`;
+          ctx.fill();
+          ctx.closePath();
+        });
 
-createStars();
-animateStars();</script>
+        requestAnimationFrame(animateStars);
+      }
+
+      createStars();
+      animateStars();
+    </script>
+        <script>
+          document.querySelectorAll('.button').forEach(function(button) {
+            button.addEventListener('click', function() {
+              const url = this.getAttribute('data-url');
+              setTimeout(function() {
+                window.location.href = url;
+              }, 5);
+            });
+          });
+          </script>
 </body>
 </html>
