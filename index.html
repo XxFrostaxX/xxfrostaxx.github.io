@@ -1,12 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kasai.rip</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="pfp.jpg">
+    <title>kxsai</title>
+    <style>
+        @font-face {
+            font-family: 'Zpix';
+            src: url('zpix.woff2') format('woff2');
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Zpix';
+            color: whitesmoke;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: url("cur.cur"), auto;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            transition: opacity 1s ease, visibility 1s ease;
+            cursor: url("cur.cur"), auto;
+        }
+
+        #welcome-screen:hover {
+            cursor: url("cur.cur"), auto;
+        }
+
+        #welcome-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #welcome-screen h1 {
+            cursor: url("cur.cur"), auto;
+            font-size: 2.5rem;
+            color: whitesmoke;
+            text-align: center;
+            cursor: pointer;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        #welcome-screen h1:hover {
+            cursor: url("cur.cur"), auto;}
+
+
+        #content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+            margin: 20px;
+        }
+
+        #content img {
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        body {
+    cursor: url("cur.cur"), auto;
+}
+
+body:hover {
+    cursor: url("cur.cur"), auto;
+}
+
+
+        #mute-button {
+            cursor: url("cur.cur"), auto;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #mute-button:hover {
+            cursor: url("cur.cur"), auto;
+            box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; 
+        }
+
+        #rotating-audio-icon {
+    transition: all 0.3s ease-in-out;
+    cursor: url("cur.cur"), auto;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    animation: rotate 4s linear infinite;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+#rotating-audio-icon:hover {
+    cursor: url("cur.cur"), auto;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; 
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+    </style>
 </head>
 <body>
-<h1>Sorry, we are currently Offline :/</h1>
+
+    <div id="welcome-screen">
+        <h1>Click to Enter</h1>
+    </div>
+
+    <video id="background-video" autoplay muted loop>
+        <source src="bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <div id="content">
+        <img src="pfp.jpg" alt="Profilbild">
+        <h1>kxsai</h1>
+        <h2><span style="color: rgb(187, 187, 187);">he/him</span></h2>
+        <h3>Hi, I'm a 14-year-old dev!</h3>
+        <p>
+            <a href="https://www.tiktok.com/@kasai.rip" target="_blank">TikTok</a> | <a href="#">Discord : iam.shad0w.502</a><!-- | <a href="#contact" target="_blank">Contact</a>-->
+        </p>
+        <button id="mute-button"><</button>
+    </div>
+    <a href="https://open.spotify.com/track/4OaKnUCtu1rXNMa9eG3wA2" target="_blank"><img id="rotating-audio-icon" src="aud_img.jpg" alt="Audio Icon"></a>
+
+    <audio id="background-audio" loop>
+        <source src="aud.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const audio = document.getElementById('background-audio');
+        const muteButton = document.getElementById('mute-button');
+        
+        welcomeScreen.addEventListener('click', () => {
+            welcomeScreen.classList.add('hidden');
+            audio.play();
+        });
+
+        let isMuted = false;
+        muteButton.addEventListener('click', () => {
+            if (isMuted) {
+                audio.play();
+                muteButton.textContent = '<';
+            } else {
+                audio.pause();
+                muteButton.textContent = '>';
+            }
+            isMuted = !isMuted;
+        });
+    </script>
 </body>
 </html>
