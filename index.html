@@ -30,6 +30,8 @@
     font-weight: bold;
     cursor: url("cur.cur"), auto;
     transition: all 0.3s ease-in-out;
+    padding: 20px;
+    text-shadow: 0 0 4px #ffffff
 }
 
 a:hover {
@@ -158,6 +160,49 @@ body:hover {
         transform: rotate(360deg);
     }
 }
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.accordion-item {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: left;
+}
+
+
+
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    color: whitesmoke;
+    transition: max-height 0.3s ease;
+    border-radius: 15px;
+}
+
+.accordion-content p {
+    margin: 10px 0;
+}
+
+
     </style>
 </head>
 <body>
@@ -171,14 +216,17 @@ body:hover {
         Your browser does not support the video tag.
     </video>
 
+    <div id="dynamic-content">
 
-    <div id="content">
+    </div>
+
+    <div id="content" class="fade-in">
         <img src="pfp.jpg" alt="Profilbild">
         <h1>kxsai</h1>
         <h2><span style="color: rgb(187, 187, 187);">he/him</span></h2>
         <h3>Hi, I'm a 14-year-old dev!</h3>
         <p>
-            <a href="https://www.tiktok.com/@kasai.rip" target="_blank">TikTok</a> | <a href="#">Discord : iam.shad0w.502</a><!-- | <a href="#contact" target="_blank">Contact</a>-->
+            <a href="https://www.tiktok.com/@kasai.rip" target="_blank">TikTok</a> | <a href="#">Discord : iam.shad0w.502</a> | <a href="#projects" target="_blank">Projects</a>
         </p>
         <button id="mute-button"><</button>
     </div>
@@ -211,5 +259,77 @@ body:hover {
             isMuted = !isMuted;
         });
     </script>
+
+<script>
+    const projectsLink = document.querySelector('a[href="#projects"]');
+    const contentContainer = document.getElementById('content');
+
+    // Speichere den ursprünglichen Inhalt
+    const originalContent = contentContainer.innerHTML;
+
+    projectsLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Verhindert Seitenwechsel
+        loadProjectsContent();
+    });
+
+    function loadProjectsContent() {
+        // Neuer HTML-Inhalt für Projekte
+        const newContent = `
+            <div class="fade-in">
+                <h1>My Projects</h1>
+                <div class="accordion">
+                    <div class="accordion-item">
+                       <a class="accordion-header">Fn Settings Manager</a>
+                        <div class="accordion-content">
+                           
+                            <p>FnSettingsManager is a free tool to save, transfer, and restore Fortnite settings like keybinds, sensitivity, and graphics.
+                                 <p>Ideal for account bans, multiple accounts, or switching devices.</p>
+                                 <p>Save your settings, load them instantly, and keep gaming hassle-free</p>
+                                 <a href="https://kasai.rip/dl/FnSettingsMgr/getFnSettingsMgr.cmd">Download Now!</a>
+                                
+                        </div>
+                    </div>
+                <a id="back-button">Back</a>
+            </div>
+        `;
+
+        // Ersetze den Inhalt mit neuen Projekten
+        contentContainer.innerHTML = newContent;
+
+                    // Event-Listener für Accordion hinzufügen
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+
+                // Toggle zwischen auf- und zuklappen
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Füge Event-Listener für den Zurück-Button hinzu
+        document.getElementById('back-button').addEventListener('click', () => {
+            goBackToMainContent();
+        });
+    }
+
+    function goBackToMainContent() {
+        // Setze den ursprünglichen Inhalt zurück
+        contentContainer.innerHTML = originalContent;
+
+        // Stelle sicher, dass der "Projects"-Link wieder funktioniert
+        document.querySelector('a[href="#projects"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            loadProjectsContent();
+        });
+    }
+</script>
+
+
+
 </body>
 </html>
