@@ -1,335 +1,115 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="pfp.jpg">
     <title>kxsai</title>
+
     <style>
-        @font-face {
-            font-family: 'Zpix';
-            src: url('zpix.woff2') format('woff2');
+        body {
+            background-color: #000;
+            color: #fff;
+
         }
 
+        @font-face {
+            font-family: 'Mammoth Wide Outline';
+            src: url('font_wide_outline_mammoth.ttf');
+        }
 
-        body {
+        #logo {
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Mammoth Wide Outline';
+        }
+
+        #logo img {
+            width: 200px;
+            max-width: 100vw;
+            transition: all .4s ease;
+        }
+
+        #logo img:hover {
+            transform: scale(1.075);
+            
+        }
+
+        ul {
+            list-style-type: none;
             margin: 0;
             padding: 0;
-            font-family: 'Zpix';
-            color: whitesmoke;
-            height: 100vh;
-            overflow: hidden;
             display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: url("cur.cur"), auto;
-    transition: all 0.3s ease-in-out;
-    padding: 20px;
-    text-shadow: 0 0 4px #ffffff
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #ffffff;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-}
-
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-
-        #welcome-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            transition: opacity 1s ease, visibility 1s ease;
-            cursor: url("cur.cur"), auto;
-        }
-
-        #welcome-screen:hover {
-            cursor: url("cur.cur"), auto;
-        }
-
-        #welcome-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #welcome-screen h1 {
-            cursor: url("cur.cur"), auto;
-            font-size: 2.5rem;
-            color: whitesmoke;
-            text-align: center;
-            cursor: pointer;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        #welcome-screen h1:hover {
-            cursor: url("cur.cur"), auto;}
-
-
-        #content {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(4px);
-            z-index: 1;
-            margin: 20px;
-        }
-
-        #content img {
-            width: 200px;
-            border-radius: 50%;
-        }
-
-        body {
-    cursor: url("cur.cur"), auto;
-}
-
-body:hover {
-    cursor: url("cur.cur"), auto;
-}
-
-
-        #mute-button {
-            cursor: url("cur.cur"), auto;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #000000;
-            color: whitesmoke;
+        .button {
+            border-radius: 10px;
+            background-color: #121212; /* Green */
             border: none;
-            border-radius: 5px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            margin-right: 10px;
+            margin-bottom: 0px;
+            transition: all .2s ease;
+            
         }
 
-        #mute-button:hover {
-            cursor: url("cur.cur"), auto;
-            box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; 
+        .button:hover {
+            background-color: #1a1a1a; /* Green */
+            transform: scale(1.05);
+            box-shadow: 0 0 100px #ffffff2e;
         }
 
-        #rotating-audio-icon {
-    transition: all 0.3s ease-in-out;
-    cursor: url("cur.cur"), auto;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%;
-    animation: rotate 4s linear infinite;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
+        #nav {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-
-#rotating-audio-icon:hover {
-    cursor: url("cur.cur"), auto;
-    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; 
-}
-
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.accordion-item {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.accordion-header {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    text-align: left;
-}
-
-
-
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0 10px;
-    color: whitesmoke;
-    transition: max-height 0.3s ease;
-    border-radius: 15px;
-}
-
-.accordion-content p {
-    margin: 10px 0;
-}
-
+        #construc {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
     </style>
+
 </head>
 <body>
+    <header>
 
-    <div id="welcome-screen">
-        <h1>Click to Enter</h1>
+    <!-- logo -->
+    <div id="logo">
+        <img src="logo.png" alt="KXSAI Logo">
     </div>
 
-    <video id="background-video" autoplay muted loop>
-        <source src="bg.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- buttons -->
 
-    <div id="dynamic-content">
-
-    </div>
-
-    <div id="content" class="fade-in">
-        <img src="pfp.jpg" alt="Profilbild">
-        <h1>kxsai</h1>
-        <h2><span style="color: rgb(187, 187, 187);">he/him</span></h2>
-        <h3>Hi, I'm a 14-year-old dev!</h3>
-        <p>
-            <a href="https://www.tiktok.com/@kasai.rip" target="_blank">TikTok</a> | <a href="#">Discord : iam.shad0w.502</a> | <a href="#projects" target="_blank">Projects</a>
-        </p>
-        <button id="mute-button"><</button>
-    </div>
-    <a href="https://open.spotify.com/track/0NDwFmgihsIRmkblqpI6BY" target="_blank"><img id="rotating-audio-icon" src="aud_img.jpg" alt="Audio Icon"></a>
-
-    <audio id="background-audio" loop>
-        <source src="aud.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
-
-    <script>
-        const welcomeScreen = document.getElementById('welcome-screen');
-        const audio = document.getElementById('background-audio');
-        const muteButton = document.getElementById('mute-button');
-        
-        welcomeScreen.addEventListener('click', () => {
-            welcomeScreen.classList.add('hidden');
-            audio.play();
-        });
-
-        let isMuted = false;
-        muteButton.addEventListener('click', () => {
-            if (isMuted) {
-                audio.play();
-                muteButton.textContent = '<';
-            } else {
-                audio.pause();
-                muteButton.textContent = '>';
-            }
-            isMuted = !isMuted;
-        });
-    </script>
-
-<script>
-    const projectsLink = document.querySelector('a[href="#projects"]');
-    const contentContainer = document.getElementById('content');
-
-    // Speichere den ursprünglichen Inhalt
-    const originalContent = contentContainer.innerHTML;
-
-    projectsLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Verhindert Seitenwechsel
-        loadProjectsContent();
-    });
-
-    function loadProjectsContent() {
-        // Neuer HTML-Inhalt für Projekte
-        const newContent = `
-            <div class="fade-in">
-                <h1>My Projects</h1>
-                <div class="accordion">
-                    <div class="accordion-item">
-                       <a class="accordion-header">Fn Settings Manager</a>
-                        <div class="accordion-content">
-                           
-                            <p>FnSettingsManager is a free tool to save, transfer, and restore Fortnite settings like keybinds, sensitivity, and graphics.
-                                 <p>Ideal for account bans, multiple accounts, or switching devices.</p>
-                                 <p>Save your settings, load them instantly, and keep gaming hassle-free</p>
-                                 <a href="https://kasai.rip/dl/FnSettingsMgr/getFnSettingsMgr.cmd">Download Now!</a>
-                                
-                        </div>
-                    </div>
-                <a id="back-button">Back</a>
+        <hr>
+            <div id="nav">
+                <ul>
+                    <li><a class="button" href="">Home</a></li>
+                    <li><a class="button" href="">About</a></li>
+                    <li><a class="button" href="">My Projects</a></li>
+                    <li><a class="button" href="">Contact</a></li>
+                  </ul>
             </div>
-        `;
+            <br> 
 
-        // Ersetze den Inhalt mit neuen Projekten
-        contentContainer.innerHTML = newContent;
+        <hr>
 
-                    // Event-Listener für Accordion hinzufügen
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
+    </header>
+    <div id="construc">
+<img src="construc.gif" alt="">
 
-                // Toggle zwischen auf- und zuklappen
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
-            });
-        });
-
-        // Füge Event-Listener für den Zurück-Button hinzu
-        document.getElementById('back-button').addEventListener('click', () => {
-            goBackToMainContent();
-        });
-    }
-
-    function goBackToMainContent() {
-        // Setze den ursprünglichen Inhalt zurück
-        contentContainer.innerHTML = originalContent;
-
-        // Stelle sicher, dass der "Projects"-Link wieder funktioniert
-        document.querySelector('a[href="#projects"]').addEventListener('click', (e) => {
-            e.preventDefault();
-            loadProjectsContent();
-        });
-    }
-</script>
-
-
-
+</div>
 </body>
 </html>
