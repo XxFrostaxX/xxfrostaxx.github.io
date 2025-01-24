@@ -1,116 +1,454 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <title>kxsai</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    
+    <title>Kasai</title>
     <style>
+
         body {
             background-color: #000;
             color: #fff;
-
-        }
-
-        @font-face {
-            font-family: 'Mammoth Wide Outline';
-            src: url('font_wide_outline_mammoth.ttf');
-        }
-
-        #logo {
-            text-align: center;
-        }
-
-        h1 {
-            color: #fff;
-            text-align: center;
-            font-size: 50px;
-            font-family: 'Mammoth Wide Outline';
-        }
-
-        #logo img {
-            width: 200px;
-            max-width: 100vw;
-            transition: all .4s ease;
-        }
-
-        #logo img:hover {
-            transform: scale(1.075);
-            
-        }
-
-        ul {
-            list-style-type: none;
             margin: 0;
-            padding: 0;
-            display: flex;
+            overflow-x: hidden;
+            font-family: 'Times New Roman', Times, serif;
+            user-select: none;
+            cursor: url(cur.cur), auto;
         }
-
-        .button {
-            border-radius: 10px;
-            background-color: #121212; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
+        a { cursor: url(finger.cur), auto; }
+        .logo {
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 16px;
-            margin-right: 10px;
-            margin-bottom: 0px;
-            transition: all .2s ease;
-            
+            background: rgb(54,0,116);
+            background: linear-gradient(180deg, rgb(29, 0, 63) 0%, rgba(0,0,0,1) 100%) !important;
+            text-shadow: 0 0 10px rgb(119, 0, 255);
+            font-size: 15px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+  text-shadow: 0 0 10px rgb(119, 0, 255),0 0 10px rgb(72, 0, 155);
+  display: flex; /* Aktiviert Flexbox */
+  justify-content: center; /* Zentriert die Navigation horizontal */
+
+  
+}
+
+.title {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
         }
 
-        .button:hover {
-            background-color: #1a1a1a; /* Green */
-            transform: scale(1.05);
-            box-shadow: 0 0 100px #ffffff2e;
+li {
+  
+  border-right: 1.6px solid rgb(52, 1, 110);
+
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: all linear .1s;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(10, 0, 20);
+  box-shadow: 0 0 10px rgb(119, 0, 255),0 0 20px rgb(31, 0, 66);
+}
+
+.active {
+  background-color: rgb(17, 0, 37);
+  transition: all linear .1s;
+  
+}
+.active:hover {
+  background-color: rgb(38, 0, 82);
+  box-shadow: 0 0 10px rgb(119, 0, 255),0 0 20px rgb(31, 0, 66);
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  100% {
+    opacity: 0;
+  }
+}
+.rainbow-bg{
+		animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
+}
+
+        button {
+ /* Green */
+ 
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+            cursor: url(finger.cur), auto;
+            border-right: 1.6px solid rgb(52, 1, 110);
+            border-left: 1.6px solid rgb(52, 1, 110);
+            background-color: rgb(17, 0, 37);
         }
 
-        #nav {
-            max-width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
+        button:hover {
+          
+          background-color: rgb(10, 0, 20);
+          box-shadow: 0 0 10px rgb(119, 0, 255),0 0 20px rgb(31, 0, 66);
+          transition: all .3s linear;
         }
 
-        #construc {
-            max-width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
+.rainbow{
+		animation: rainbow 5s linear;
+		animation-iteration-count: infinite;
+}
+
+.rainbowf{
+		animation: rainbow .75s linear;
+		animation-iteration-count: infinite;
+}
+
+.rainbowff{
+		animation: rainbow .3s linear;
+		animation-iteration-count: infinite;
+}
+
+.rainbowfff{
+		animation: rainbow .15s linear;
+		animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+		100%,0%{
+			background-color: rgb(255,0,0);
+		}
+		8%{
+			background-color: rgb(255,127,0);
+		}
+		16%{
+			background-color: rgb(255,255,0);
+		}
+		25%{
+			background-color: rgb(127,255,0);
+		}
+		33%{
+			background-color: rgb(0,255,0);
+		}
+		41%{
+			background-color: rgb(0,255,127);
+		}
+		50%{
+			background-color: rgb(0,255,255);
+		}
+		58%{
+			background-color: rgb(0,127,255);
+		}
+		66%{
+			background-color: rgb(0,0,255);
+		}
+		75%{
+			background-color: rgb(127,0,255);
+		}
+		83%{
+			background-color: rgb(255,0,255);
+		}
+		91%{
+			background-color: rgb(255,0,127);
+		}
+}
+
+@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+            text-shadow: 0 0 10px rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+            text-shadow: 0 0 10px rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+            text-shadow: 0 0 10px rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+            text-shadow: 0 0 10px rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+            text-shadow: 0 0 10px rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+            text-shadow: 0 0 10px rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+            text-shadow: 0 0 10px rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+            text-shadow: 0 0 10px rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+            text-shadow: 0 0 10px rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+            text-shadow: 0 0 10px rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+            text-shadow: 0 0 10px rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+            text-shadow: 0 0 10px rgb(255,0,127);
+
+		}
+}
+
+iframe {
+      width: 100%;
+      height: calc(100vh - 50px); /* Subtract the height of the navigation bar */
+      border: none;
+    }
+
+    .player {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .cover {
+      box-shadow: 0 0 10px rgb(119, 0, 255),0 0 20px rgb(31, 0, 66),0 0 10px rgb(119, 0, 255),0 0 20px rgb(31, 0, 66);
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            animation: none;
+        }
+        .cover.playing {
+            animation: rotate 3s linear infinite;
         }
 
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+
+        .slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 300px; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #12001a; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 10px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: rgb(119, 0, 255); /* Green background */
+  box-shadow: 0 0 10px rgb(119, 0, 255),0 0 10px rgb(119, 0, 255);
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
     </style>
-
 </head>
 <body>
-    <header>
+    <div class="logo">
+      <a href="" style="text-decoration: none; user-select: none; cursor: url(finger.cur), auto;">
+<pre class="">
 
-    <!-- logo -->
-    <div id="logo">
-        <img src="logo.png" alt="KXSAI Logo">
+<span style="color: rgb(119, 0, 255);"> ██ ▄█▀▄▄▄        ██████  ▄▄▄       ██▓   </span>
+<span style="color: rgb(111, 0, 237);"> ██▄█▒▒████▄    ▒██    ▒ ▒████▄    ▓██▒   </span>
+<span style="color: rgb(103, 0, 219);">▓███▄░▒██  ▀█▄  ░ ▓██▄   ▒██  ▀█▄  ▒██▒   </span>
+<span style="color: rgb(95, 0, 201);">▓██ █▄░██▄▄▄▄██   ▒   ██▒░██▄▄▄▄██ ░██░   </span>
+<span style="color: rgb(87, 0, 183);">▒██▒ █▄▓█   ▓██▒▒██████▒▒ ▓█   ▓██▒░██░   </span>
+<span style="color: rgb(79, 1, 165);">▒ ▒▒ ▓▒▒▒   ▓▒█░▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░░▓     </span>
+<span style="color: rgb(71, 1, 147);">░ ░▒ ▒░ ▒   ▒▒ ░░ ░▒  ░ ░  ▒   ▒▒ ░ ▒ ░   </span>
+<span style="color: rgb(63, 1, 129);">░ ░░ ░  ░   ▒   ░  ░  ░    ░   ▒    ▒ ░   </span>
+<span style="color: rgb(52, 1, 110)">░  ░        ░  ░      ░        ░  ░ ░     </span>
+</a>Coded by Kasai
+</pre>
+
+
+
+
     </div>
+    <ul id="navList" style="z-index: 22;">
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="playPauseButton1" onclick="playPause()">Play Music</button></li>
+    </ul>
 
-    <!-- buttons -->
+    <iframe id="contentFrame" src="home.html"></iframe>
+    <div class="player">
+      <div class="title" id="title">Select a song</div>
+      <div class="cover" id="cover"></div>
+      <audio id="audio" src=""></audio>
+      <input type="range" id="progressBar" class="slider" value="0" min="0" max="100" step="1" />
+      <div>
+          <button onclick="prevSong()">⏪</button>
+          <button id="playPauseButton" onclick="playPause()">⏵</button>
+          <button onclick="nextSong()">⏩</button>
+      </div>
+  </div>
+  
+  <script>
+      const playlist = [
+          { title: "CPU Plaza", file: "aud/CPUPlaza.mp3", cover: "aud/CPUPlaza.jpeg" },
+          { title: "The Kids Aren't Alright", file: "aud/TheKidsArentAlright.mp3", cover: "aud/TheKidsArentAlright.jpeg" },
+          { title: "so bitter", file: "aud/SoBitter.mp3", cover: "aud/SoBitter.jpeg" }
+      ];
+  
+      let currentIndex = 0;
+      const audio = document.getElementById('audio');
+      const title = document.getElementById('title');
+      const cover = document.getElementById('cover');
+      const playPauseButton = document.getElementById('playPauseButton');
+      const playPauseButton1 = document.getElementById('playPauseButton1');
+      const progressBar = document.getElementById('progressBar');
+  
+      function loadSong(index) {
+          if (index >= 0 && index < playlist.length) {
+              audio.src = playlist[index].file;
+              title.textContent = playlist[index].title;
+              cover.style.backgroundImage = `url(${playlist[index].cover})`;
+              audio.load();
+              updatePlayPauseButtons();
+          }
+      }
+  
+      function playPause() {
+          if (audio.paused) {
+              audio.play();
+          } else {
+              audio.pause();
+          }
+          updatePlayPauseButtons();
+      }
+  
+      function updatePlayPauseButtons() {
+          if (audio.paused) {
+              playPauseButton.textContent = "⏵";
+              playPauseButton1.textContent = "⏵";
+              cover.classList.remove('playing');
+          } else {
+              playPauseButton.textContent = "⏸";
+              playPauseButton1.textContent = "⏸";
+              cover.classList.add('playing');
+          }
+      }
+  
+      function nextSong() {
+          currentIndex = (currentIndex + 1) % playlist.length;
+          loadSong(currentIndex);
+          audio.play();
+          updatePlayPauseButtons();
+      }
+  
+      function prevSong() {
+          currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+          loadSong(currentIndex);
+          audio.play();
+          updatePlayPauseButtons();
+      }
+  
+      // Fortschrittsanzeige aktualisieren
+      audio.addEventListener('timeupdate', () => {
+          const progressPercent = (audio.currentTime / audio.duration) * 100 || 0;
+          progressBar.value = progressPercent;
+      });
+  
+      // Songposition mit Slider ändern
+      progressBar.addEventListener('input', () => {
+          const newTime = (progressBar.value / 100) * audio.duration;
+          audio.currentTime = newTime;
+      });
+  
+      // Wenn der Song zu Ende ist, spiele den nächsten
+      audio.addEventListener('ended', nextSong);
+  
+      // Initiale Ladung des ersten Songs
+      loadSong(currentIndex);
+  </script>
+  
+  
 
-        <hr>
-            <div id="nav">
-                <ul>
-                    <li><a class="button" href="">Home</a></li>
-                    <li><a class="button" href="">About</a></li>
-                    <li><a class="button" href="">My Projects</a></li>
-                    <li><a class="button" href="">Contact</a></li>
-                  </ul>
-            </div>
-            <br> 
 
-        <hr>
 
-    </header>
-    <div id="construc">
-<img src="construc.gif" alt="">
-
-</div>
+    
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navList = document.getElementById("navList");
+        const iframe = document.getElementById("contentFrame");
+  
+        navList.addEventListener("click", (event) => {
+          const target = event.target;
+  
+          if (target.tagName === "A") {
+            // Remove active class from all links
+            navList.querySelectorAll("a").forEach(link => link.classList.remove("active"));
+  
+            // Add active class to the clicked link
+            target.classList.add("active");
+  
+            // Update the iframe src
+            event.preventDefault(); // Prevent default link behavior
+            const href = target.getAttribute("href");
+            iframe.src = href;
+          }
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script>
+        new cursoreffects.fairyDustCursor({
+            colors: ["#7700ff"],
+        });
+    </script>
 </body>
 </html>

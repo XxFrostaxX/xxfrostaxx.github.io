@@ -1,0 +1,55 @@
+/*
+
+RainbowCSS v1.0  
+Developed by Kasai  
+Downloaded from kasai.rip  
+
+Mirror Servers:
+    ------------------------------------
+    - cdn.robin-hood.org (self-hosted) -
+    - cdn.lxca.cc (self-hosted)        -
+    - cdn.gtp3.org (self-hosted)       -
+    - cdn.kasai.rip (github pages)     -
+    ------------------------------------
+Note: All these servers are operated and maintained by Kasai (Luca).  
+
+Want to mirror your own software?
+    For more information:  
+        - luca@kasai.rip  
+        - info@gtp3.org  
+
+© 2025 Kasai.  
+This CSS script can be freely used and modified by anyone. 
+For the original version, please refer to one of the listed servers: `/mirror/software/kasai/rainbowcss/`.  
+
+ ██ ▄█▀▄▄▄        ██████  ▄▄▄       ██▓
+ ██▄█▒▒████▄    ▒██    ▒ ▒████▄    ▓██▒
+▓███▄░▒██  ▀█▄  ░ ▓██▄   ▒██  ▀█▄  ▒██▒
+▓██ █▄░██▄▄▄▄██   ▒   ██▒░██▄▄▄▄██ ░██░
+▒██▒ █▄▓█   ▓██▒▒██████▒▒ ▓█   ▓██▒░██░
+▒ ▒▒ ▓▒▒▒   ▓▒█░▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░░▓  
+░ ░▒ ▒░ ▒   ▒▒ ░░ ░▒  ░ ░  ▒   ▒▒ ░ ▒ ░
+░ ░░ ░  ░   ▒   ░  ░  ░    ░   ▒    ▒ ░
+░  ░        ░  ░      ░        ░  ░ ░  
+                                 
+
+Documentation:
+    How to Include it?
+
+    Paste this in the <head> of your html file:
+    <link rel="stylesheet" href="https://cdn.kasai.rip/mirror/software/kasai/rainbowcss/v1/rainbow.css">
+
+    Usage:
+    Use .rainbow-bg_* classes to apply animated background effects to elements.
+    Use .rainbow_* classes to apply animated text color and shadow effects.
+    The _s, _f, _ff, and _fff suffixes indicate different animation speeds, allowing for customization based on desired visual impact.
+    ---------------------------------------------------------------------------------------------------------------------------------
+    _s = Slow
+    no suffix = normal
+    _f = fast
+    _ff = really fast
+    _fff = really really fast
+*/
+
+/* Script: */
+.rainbow-bg_s {animation: rainbow-bg 5s linear; animation-iteration-count: infinite;} .rainbow-bg {animation: rainbow-bg 2.5s linear; animation-iteration-count: infinite;}.rainbow-bg_f {animation: rainbow-bg .75s linear; animation-iteration-count: infinite;}.rainbow-bg_ff {animation: rainbow-bg .3s linear; animation-iteration-count: infinite;}.rainbow-bg_fff {animation: rainbow-bg .15s linear; animation-iteration-count: infinite;}.rainbow_s {animation: rainbow 5s linear; animation-iteration-count: infinite;}.rainbow {animation: rainbow 2.5s linear; animation-iteration-count: infinite;}.rainbow_f {animation: rainbow .75s linear; animation-iteration-count: infinite;}.rainbow_ff {animation: rainbow .3s linear; animation-iteration-count: infinite;}.rainbow_fff {animation: rainbow .15s linear; animation-iteration-count: infinite;}@keyframes rainbow-bg{100%,0%{background-color: rgb(255,0,0);}8%{background-color: rgb(255,127,0);}16%{background-color: rgb(255,255,0);}25%{background-color: rgb(127,255,0);}33%{background-color: rgb(0,255,0);}41%{background-color: rgb(0,255,127);}50%{background-color: rgb(0,255,255);}58%{background-color: rgb(0,127,255);}66%{background-color: rgb(0,0,255);}75%{background-color: rgb(127,0,255);}83%{background-color: rgb(255,0,255);}91%{background-color: rgb(255,0,127);}}@keyframes rainbow{100%,0%{color: rgb(255,0,0);text-shadow: 0 0 10px rgb(255,0,0);}8%{color: rgb(255,127,0);text-shadow: 0 0 10px rgb(255,127,0);}16%{color: rgb(255,255,0);text-shadow: 0 0 10px rgb(255,255,0);}25%{color: rgb(127,255,0);text-shadow: 0 0 10px rgb(127,255,0);}33%{color: rgb(0,255,0);text-shadow: 0 0 10px rgb(0,255,0);}41%{color: rgb(0,255,127);text-shadow: 0 0 10px rgb(0,255,127);}50%{color: rgb(0,255,255);text-shadow: 0 0 10px rgb(0,255,255);}58%{color: rgb(0,127,255);text-shadow: 0 0 10px rgb(0,127,255);}66%{color: rgb(0,0,255);text-shadow: 0 0 10px rgb(0,0,255);}75%{color: rgb(127,0,255);text-shadow: 0 0 10px rgb(127,0,255);}83%{color: rgb(255,0,255);text-shadow: 0 0 10px rgb(255,0,255);}91%{color: rgb(255,0,127);text-shadow: 0 0 10px rgb(255,0,127)}}
